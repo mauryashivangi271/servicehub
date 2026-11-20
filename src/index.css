@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme { --font-sans: Inter, ui-sans-serif, system-ui, sans-serif; }
+:root { font-family: var(--font-sans); color: #14213b; background: #f5f7fc; font-synthesis: none; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; min-width: 320px; }
+button:not(:disabled), a { cursor: pointer; }
+button, a, input, select, textarea { transition: background-color .18s, border-color .18s, box-shadow .18s; }
+:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+::selection { background: #dbeafe; color: #172554; }
+main .bg-white.rounded-2xl, main .rounded-2xl.bg-white { box-shadow: 0 5px 24px #17255408; }
+main input:not([type=checkbox]):not([type=radio]):not([type=file]), main select, main textarea { min-width: 0; }
+.sh-auth { background: radial-gradient(ellipse at 15% 12%, #344fba 0, transparent 45%), radial-gradient(ellipse at 90% 85%, #263a91 0, transparent 42%), #0b1530; }
+.sh-auth > div { box-shadow: 0 28px 90px #02061766; border-radius: 28px; }
+.sh-card { transition: transform .2s, box-shadow .2s; }
+.sh-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px #17255415; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

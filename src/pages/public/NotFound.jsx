@@ -1,0 +1,2 @@
+import {Link} from 'react-router-dom';
+export default function NotFound(){return <main className="grid min-h-screen place-items-center bg-slate-50 p-6 text-center"><div><p className="text-5xl font-bold text-blue-700">404</p><h1 className="mt-4 text-2xl font-bold">Page not found</h1><p className="my-4 text-slate-600">This page may have moved or no longer exists.</p><Link to="/" className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-white">Back to ServiceHub</Link></div></main>}

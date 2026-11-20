@@ -1,0 +1,65 @@
+# Dependencies and Build
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# Environment Security
+.env
+.env.*
+!.env.example
+*.local
+.vercel/
+*.pem
+*.key
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Editor and System
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Project Backups and Updates
+Phase*/
+Premium*/
+UI_*/
+Final_UI*/
+Marketplace_*/
+Photo_*/
+Reference_UI*/
+Image_Fix/
+Category_Fix/
+*Backup*/
+*backup*/
+*.backup.*
+*.bak
+*.zip
+*.rar
+*.7z
+
+# Testing
+test-results/
+playwright-report/
+
+# Supabase Temporary Files
+supabase/.temp/
+supabase/.branches/
+
+# Unnecessary development files
+/Project_Structure.txt
+/project-structure.txt
+/auth-check.txt
+/structure.txt
+/selectSection(item.id)}
+/setMenuOpen(false)}
+/setMenuOpen(true)}
+/{
+*.jsxcode

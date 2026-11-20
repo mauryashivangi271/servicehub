@@ -1,0 +1,2 @@
+import AdminRecords,{money,short} from './AdminRecords';
+export default function AdminServices(){return <AdminRecords title="Service Management" table="worker_services" columns="id,title,worker_id,price,pricing_type,is_active,created_at" searchKey="title" filterKey="is_active" options={['true','false']} serviceActions fields={[["Service",r=>r.title],["Provider",r=>short(r.worker_id)],["Price",r=>money(r.price)],["Pricing",r=>r.pricing_type],["Status",r=>r.is_active?'Active':'Inactive']]}/>;}

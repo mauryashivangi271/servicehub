@@ -1,0 +1,2 @@
+import AdminRecords,{date,short} from './AdminRecords';
+export default function AdminAuditLogs(){return <AdminRecords title="Admin Audit Logs" table="admin_audit_logs" columns="id,admin_id,action,entity_type,entity_id,old_data,new_data,created_at" searchKey="action" fields={[["Time",r=>date(r.created_at)],["Admin",r=>short(r.admin_id)],["Action",r=>r.action],["Entity",r=>`${r.entity_type}: ${r.entity_id||''}`],["Before",r=>JSON.stringify(r.old_data)],["After",r=>JSON.stringify(r.new_data)]]}/>;}

@@ -1,0 +1,7 @@
+import { supabase } from '../lib/supabase';
+export async function unwrap(request){const {data,error,count}=await request;if(error)throw error;return {data,count};}
+export async function list(table,columns,order='created_at',page=0,search={},filter={}){let q=supabase.from(table).select(columns,{count:'exact'});for(const [k,v] of Object.entries(filter))if(v!=='')q=q.eq(k,v);for(const [k,v] of Object.entries(search))if(v)q=q.ilike(k,`%${v}%`);return unwrap(q.order(order,{ascending:false}).range(page*25,page*25+24));}
+export async function setService(id,active){return unwrap(supabase.rpc('admin_set_service_status',{p_service_id:id,p_is_active:active}));}
+export async function setCommission(value){return unwrap(supabase.rpc('admin_set_commission',{p_percentage:value}));}
+export async function getCommission(){return (await unwrap(supabase.from('platform_settings').select('setting_value').eq('setting_key','commission_percentage').single())).data.setting_value;}
+export async function overview(){const specs=[['Customers','user_roles','role','customer'],['Workers','user_roles','role','worker'],['Bookings','bookings'],['Active services','worker_services','is_active',true],['Captured payments','payments','status','captured'],['New enquiries','contact_enquiries','status','new']];return Promise.all(specs.map(async ([label,table,key,value])=>{let q=supabase.from(table).select('*',{count:'exact',head:true});if(key)q=q.eq(key,value);const {count}=await unwrap(q);return {label,count};}));}
